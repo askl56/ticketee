@@ -20,6 +20,8 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :test do
