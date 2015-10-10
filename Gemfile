@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 
 group :development, :test do
@@ -22,6 +23,8 @@ group :development do
   gem 'spring'
   gem 'pry'
   gem 'pry-rails'
+  gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
 end
 
 group :test do
