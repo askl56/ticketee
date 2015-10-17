@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'cancan', '~> 1.6.10'
 
 
 group :development, :test do
