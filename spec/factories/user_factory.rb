@@ -7,6 +7,12 @@ FactoryGirl.define do
     email { generate(:email) }
     password "hunter2"
 
+    factory :confirmed_user do
+      after_create do |user|
+        user.confirm!
+      end
+    end
+
     factory :admin_user do
       admin true
     end
