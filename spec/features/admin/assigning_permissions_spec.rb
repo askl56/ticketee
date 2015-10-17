@@ -50,6 +50,7 @@ feature "Assigning permissions" do
     click_button "Update Ticket"
     expect(page).to have_content("Ticket has been updated")
   end
+
   scenario "Deleting a ticket for a project" do
     check_permission_box "view", project
     check_permission_box "delete_tickets", project
