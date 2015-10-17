@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :tickets
   end
 
+  resources :files
   resources :users
 
   get "/signin", to: "sessions#new"
