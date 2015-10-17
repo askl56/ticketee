@@ -1,26 +1,29 @@
 <%= form_for [@project, @ticket], html: { multipart: true } do |f| %>
-  <% if @ticket.errors.any? %>
-   <div id="error_explanation">
-     <h2><%= pluralize(@ticket.errors.count, "error") %>
-     prohibited this ticket from being saved:</h2>
-     <ul>
+<% if @ticket.errors.any? %>
+<div id="error_explanation">
+ <h2><%= pluralize(@ticket.errors.count, "error") %>
+   prohibited this ticket from being saved:</h2>
+   <ul>
      <% @ticket.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
+     <li><%= msg %></li>
      <% end %>
-     </ul>
-   </div>
-  <% end %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :asset, "File" %><br>
-    <%= f.file_field :asset %>
-  </p>
-  <%= f.submit %>
+   </ul>
+ </div>
+ <% end %>
+ <p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</p>
+<% number = 0 %>
+<%= f.fields_for :assets do |asset| %>
+<p>
+  <%= asset.label :asset, "File ##{number += 1}" %>
+  <%= asset.file_field :asset %>
+</p>
+<% end %>
+<%= f.submit %>
 <% end %>
